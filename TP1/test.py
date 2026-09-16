@@ -24,3 +24,7 @@ def test_3():
 def test_exception():
     with pytest.raises(Exception):
         f.puissance(0, -1)
+
+    with pytest.raises(Exception):
+        f.puissance(0, 0)
+
