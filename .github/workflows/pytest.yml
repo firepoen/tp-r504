@@ -5,11 +5,27 @@ on: [push]
 jobs:
   test1:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        python-version: ["3.8", "3.10"]
+
     steps:
       - uses: actions/checkout@v3
 
       - name: Set up Python for Demo
         uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Afficher nom branche
+        run: echo "Nom branche: ${{ github.ref }}"
+
+      - name: Afficher OS
+        run: echo "OS: ${{ runner.os }}"
+
+      - name: Afficher version Python
+        run: python --version
 
       - name: Install pytest
         run: pip install pytest
