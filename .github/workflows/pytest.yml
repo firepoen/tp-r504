@@ -1,6 +1,9 @@
 name: tests unitaires
 
-on: [push]
+on:
+  push:
+    paths:
+      - 'TP1/**'
 
 jobs:
   test1:
