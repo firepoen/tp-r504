@@ -5,7 +5,7 @@ def puissance(a, b):
     if not type(b) is int:
         raise TypeError("Seuls les nombres entiers sont autorisés")
 
-    if a == 0 and b < 0:
+    if a == 0 and b <= 0:
         raise Exception("Opération indéfinie")
 
     resultat = 1
